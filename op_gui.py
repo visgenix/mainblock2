@@ -36,8 +36,8 @@ def show_pickle_window():
         if(s_id==""):
             label.configure(text="Enter the  ID ")
         else:
-            x = pickle.load(open("/home/srec/Desktop/FaceRPI/X.sav", "rb"))
-            y = pickle.load(open("/home/srec/Desktop/FaceRPI/Y.sav", "rb"))
+            x = pickle.load(open("/home/srec/Desktop/FaceRPI/model/X.sav", "rb"))
+            y = pickle.load(open("/home/srec/Desktop/FaceRPI/model/Y.sav", "rb"))
             count=0
             for id in y:
                 if re.search(s_id, str(id)):
@@ -50,8 +50,8 @@ def show_pickle_window():
         if(s_name==""):
             label.configure(text="Enter the  NAME ")
         else:
-            x = pickle.load(open("/home/srec/Desktop/FaceRPI/X.sav", "rb"))
-            y = pickle.load(open("/home/srec/Desktop/FaceRPI/Y.sav", "rb"))
+            x = pickle.load(open("/home/srec/Desktop/FaceRPI/model/X.sav", "rb"))
+            y = pickle.load(open("/home/srec/Desktop/FaceRPI/model/Y.sav", "rb"))
             count=0
             for id in y:
                 if re.search(s_name, str(id)):
@@ -64,8 +64,8 @@ def show_pickle_window():
         if(s_id==""):
             label.configure(text="Enter the  ID ")
         else:
-            x = pickle.load(open("/home/srec/Desktop/FaceRPI/X.sav", "rb"))
-            y = pickle.load(open("/home/srec/Desktop/FaceRPI/Y.sav", "rb"))
+            x = pickle.load(open("/home/srec/Desktop/FaceRPI/model/X.sav", "rb"))
+            y = pickle.load(open("/home/srec/Desktop/FaceRPI/model/Y.sav", "rb"))
             count=0
             for id in y:
                 if re.search(s_id, str(id)):
@@ -82,8 +82,8 @@ def show_pickle_window():
                         count+=1
                         print("Index: ",y.index(id))
                 print("Count: ",count," ID: ",s_id)
-                pickle.dump(x,open("/home/srec/Desktop/FaceRPI/X.sav", "wb"))
-                pickle.dump(y,open("/home/srec/Desktop/FaceRPI/Y.sav", "wb"))
+                pickle.dump(x,open("/home/srec/Desktop/FaceRPI/model/X.sav", "wb"))
+                pickle.dump(y,open("/home/srec/Desktop/FaceRPI/model/Y.sav", "wb"))
                 label.configure(text="Deleted... New Count : "+str(count))
             else:
                 label.configure(text="Count : "+str(count)+" Delete by name")
@@ -92,8 +92,8 @@ def show_pickle_window():
         if(s_name==""):
             label.configure(text="Enter the  NAME ")
         else:
-            x = pickle.load(open("/home/srec/Desktop/FaceRPI/X.sav", "rb"))
-            y = pickle.load(open("/home/srec/Desktop/FaceRPI/Y.sav", "rb"))
+            x = pickle.load(open("/home/srec/Desktop/FaceRPI/model/X.sav", "rb"))
+            y = pickle.load(open("/home/srec/Desktop/FaceRPI/model/Y.sav", "rb"))
             count=0
             for id in y:
                 if re.search(s_name, str(id)):
@@ -109,8 +109,8 @@ def show_pickle_window():
                     count+=1
                     print("Index: ",y.index(id))
             print("Count: ",count," NAME: ",s_name)
-            pickle.dump(x,open("/home/srec/Desktop/FaceRPI/X.sav", "wb"))
-            pickle.dump(y,open("/home/srec/Desktop/FaceRPI/Y.sav", "wb"))
+            pickle.dump(x,open("/home/srec/Desktop/FaceRPI/model/X.sav", "wb"))
+            pickle.dump(y,open("/home/srec/Desktop/FaceRPI/model/Y.sav", "wb"))
             label.configure(text="Deleted... New Count : "+str(count))
     
     def check_input(event):

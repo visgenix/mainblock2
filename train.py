@@ -29,7 +29,7 @@ def show_train_window():
     rnoInstr.place(x=10, y=120)
     rno = ctk.CTkEntry(rootT, width=90, textvariable=rn, font=('Ubuntu', 16))
     rno.place(x=120, y=120)
-    with open('/home/srec/Desktop/FaceRPI/Departments.txt', 'r') as f:
+    with open('/home/srec/Desktop/FaceRPI/mainblock2/Departments.txt', 'r') as f:
         departments = f.read().split(',')
     dept = ttk.Combobox(rootT, width=15, height=5, values=departments)
     dept.current([0])
