@@ -24,7 +24,4 @@ def git_add_commit_push(repo_path, commit_message):
     push_result = run_git_command("git push")
     print("Git Push Result:\n", push_result)
 
-# Example usage
-repo_path = '/path/to/your/repo'
-commit_message = 'Your commit message here'
-git_add_commit_push(repo_path, commit_message)
+
