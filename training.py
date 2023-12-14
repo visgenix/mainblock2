@@ -34,8 +34,8 @@ def train(train_dir, model_save_path=None, n_neighbors=None, knn_algo='ball_tree
                     y.append(class_dir)
 
     # Determine how many neighbors to use for weighting in the KNN classifier
-    open_file1 = open("/home/srec/Desktop/FaceRPI/X.sav", "wb")
-    open_file2 = open("/home/srec/Desktop/FaceRPI/Y.sav", "wb")
+    open_file1 = open("/home/srec/Desktop/FaceRPI/model/X.sav", "wb")
+    open_file2 = open("/home/srec/Desktop/FaceRPI/model/Y.sav", "wb")
     pickle.dump(X, open_file1)
     pickle.dump(y, open_file2)
     if n_neighbors is None:
@@ -62,5 +62,5 @@ def train(train_dir, model_save_path=None, n_neighbors=None, knn_algo='ball_tree
     return knn_clf
 def training():
     print("Training KNN classifier...")
-    classifier = train("TrainingImage/", model_save_path="trained_knn_model.clf", n_neighbors=2)
+    classifier = train("/home/srec/FaceRPI/TrainingImage/", model_save_path="trained_knn_model.clf", n_neighbors=2)
     print("Training complete!")
