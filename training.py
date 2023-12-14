@@ -62,5 +62,5 @@ def train(train_dir, model_save_path=None, n_neighbors=None, knn_algo='ball_tree
     return knn_clf
 def training():
     print("Training KNN classifier...")
-    classifier = train("/home/srec/FaceRPI/TrainingImage/", model_save_path="trained_knn_model.clf", n_neighbors=2)
+    classifier = train("/home/srec/Desktop/FaceRPI/TrainingImage/", model_save_path="/home/srec/Desktop/FaceRPI/model/trained_knn_model.clf", n_neighbors=2)
     print("Training complete!")
