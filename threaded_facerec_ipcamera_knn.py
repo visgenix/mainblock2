@@ -13,7 +13,7 @@ from datetime import datetime
 from datetime import date
 import pyrebase
 from training import training
-from git_push import check_and_pull_repo
+from git_pull import check_and_pull_repo
 
 # firebaseConfig = { 'apiKey': "AIzaSyDYFlafc3qwcHuq968-sYJKK2zAUv6E6L8",
 #   'authDomain': "final-d7d07.firebaseapp.com",
@@ -192,7 +192,7 @@ class WebcamVideoStream:
 
 def Train_Recognize(thresh):
     repo_path = '/home/srec/Desktop/FaceRPI/mainblock2'
-    check_and_pull_repo(repo_path,"Bug Fix")
+    check_and_pull_repo(repo_path)
     #training()
     # process one frame in every 60 frames for speed
     process_this_frame = 59
