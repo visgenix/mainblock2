@@ -13,6 +13,7 @@ from datetime import datetime
 from datetime import date
 import pyrebase
 from training import training
+from git_push_test import check_and_pull_repo
 
 # firebaseConfig = { 'apiKey': "AIzaSyDYFlafc3qwcHuq968-sYJKK2zAUv6E6L8",
 #   'authDomain': "final-d7d07.firebaseapp.com",
