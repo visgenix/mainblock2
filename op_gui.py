@@ -158,7 +158,7 @@ if __name__ == '__main__':
     root.attributes('-fullscreen', True)
     root.title('Visgenix')
 
-    img = Image.open("/home/srec/Desktop/FaceRPI/mb_device2/data/Visgenix Logo-01.png")
+    img = Image.open("/home/srec/Desktop/FaceRPI/mb_device2/asset/Visgenix Logo-01.png")
     img = img.resize((105, 110))
     bg = ImageTk.PhotoImage(img)
 
