@@ -2,8 +2,8 @@ import pickle
 import regex as re
 
 def find_count(s_id):
-    x = pickle.load(open("X.sav", "rb"))
-    y = pickle.load(open("Y.sav", "rb"))
+    x = pickle.load(open("/home/srec/Desktop/FaceRPI/model_assets/X.sav", "rb"))
+    y = pickle.load(open("/home/srec/Desktop/FaceRPI/model_assets/Y.sav", "rb"))
     count=0
     for id in y:
         if re.search(s_id, str(id)):
@@ -12,18 +12,18 @@ def find_count(s_id):
     print("Count: ",count)
     
 def del_data():
-    x = pickle.load(open("X.sav", "rb"))
-    y = pickle.load(open("Y.sav", "rb"))
+    x = pickle.load(open("/home/srec/Desktop/FaceRPI/model_assets/X.sav", "rb"))
+    y = pickle.load(open("/home/srec/Desktop/FaceRPI/model_assets/Y.sav", "rb"))
     start=int(input("Enter start index:"))
     end=int(input("Enter end index:"))
     del x[start:end]
     del y[start:end]
-    pickle.dump(x,open("X.sav", "wb"))
-    pickle.dump(y,open("Y.sav", "wb"))
+    pickle.dump(x,open("/home/srec/Desktop/FaceRPI/model_assets/X.sav", "wb"))
+    pickle.dump(y,open("/home/srec/Desktop/FaceRPI/model_assets/Y.sav", "wb"))
 
 def count_del(s_id):
-    x = pickle.load(open("X.sav", "rb"))
-    y = pickle.load(open("Y.sav", "rb"))
+    x = pickle.load(open("/home/srec/Desktop/FaceRPI/model_assets/X.sav", "rb"))
+    y = pickle.load(open("/home/srec/Desktop/FaceRPI/model_assets/Y.sav", "rb"))
     count=0
     for id in y:
         if re.search(s_id, str(id)):
@@ -32,8 +32,8 @@ def count_del(s_id):
     end = start+count+1
     del x[start:end]
     del y[start:end]
-    pickle.dump(x,open("X.sav", "wb"))
-    pickle.dump(y,open("Y.sav", "wb"))
+    pickle.dump(x,open("/home/srec/Desktop/FaceRPI/model_assets/X.sav", "wb"))
+    pickle.dump(y,open("/home/srec/Desktop/FaceRPI/model_assets/Y.sav", "wb"))
     print("Deleted")
 
 s_id=input("Enter id:")

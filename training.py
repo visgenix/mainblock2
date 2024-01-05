@@ -8,10 +8,10 @@ from face_recognition.face_recognition_cli import image_files_in_folder
 
 def train(train_dir, model_save_path=None, n_neighbors=None, knn_algo='ball_tree', verbose=False):
     
-    open2= open("/home/srec/Desktop/FaceRPI/model/Y.sav", "rb")
+    open2= open("/home/srec/Desktop/FaceRPI/model_assets/Y.sav", "rb")
     y = pickle.load(open2)
 
-    open1= open("/home/srec/Desktop/FaceRPI/model/X.sav", "rb")
+    open1= open("/home/srec/Desktop/FaceRPI/model_assets/X.sav", "rb")
     X = pickle.load(open1)
     # Loop through each person in the training set
     for class_dir in os.listdir(train_dir):
@@ -34,8 +34,8 @@ def train(train_dir, model_save_path=None, n_neighbors=None, knn_algo='ball_tree
                     y.append(class_dir)
 
     # Determine how many neighbors to use for weighting in the KNN classifier
-    open_file1 = open("/home/srec/Desktop/FaceRPI/model/X.sav", "wb")
-    open_file2 = open("/home/srec/Desktop/FaceRPI/model/Y.sav", "wb")
+    open_file1 = open("/home/srec/Desktop/FaceRPI/model_assets/X.sav", "wb")
+    open_file2 = open("/home/srec/Desktop/FaceRPI/model_assets/Y.sav", "wb")
     pickle.dump(X, open_file1)
     pickle.dump(y, open_file2)
     if n_neighbors is None:
@@ -62,5 +62,5 @@ def train(train_dir, model_save_path=None, n_neighbors=None, knn_algo='ball_tree
     return knn_clf
 def training():
     print("Training KNN classifier...")
-    classifier = train("/home/srec/Desktop/FaceRPI/TrainingImage/", model_save_path="/home/srec/Desktop/FaceRPI/model/trained_knn_model.clf", n_neighbors=2)
+    classifier = train("/home/srec/Desktop/FaceRPI/TrainingImage/", model_save_path="/home/srec/Desktop/FaceRPI/model_assets/trained_knn_model.clf", n_neighbors=2)
     print("Training complete!")

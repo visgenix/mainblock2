@@ -28,12 +28,8 @@ def is_number(s):
 # Take image function
 
 def takeImages(Name):
-
-
-
-
         cam = cv2.VideoCapture(0)
-        harcascadePath = "/home/srec/Desktop/FaceRPI/model/haarcascade_frontalface_default.xml"
+        harcascadePath = "/home/srec/Desktop/FaceRPI/model_assets/haarcascade_frontalface_default.xml"
         detector = cv2.CascadeClassifier(harcascadePath)
         sampleNum = 0
         os.makedirs("/home/srec/Desktop/FaceRPI/TrainingImage/"+str(Name))
@@ -49,10 +45,10 @@ def takeImages(Name):
                 #saving the captured face in the dataset folder TrainingImage
                 cv2.imwrite("/home/srec/Desktop/FaceRPI/TrainingImage/"+ str(Name)+"/"+ os.sep +Name + '_' +str(sampleNum) + ".jpg", gray[y:y+h, x:x+w])
                 #display the frame
-                cv2.resize(img, (480, 320))
-                cv2.namedWindow("camera", cv2.WINDOW_NORMAL)
-                cv2.setWindowProperty("camera", cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)
-                cv2.imshow('camera', img)
+            cv2.resize(img, (480, 320))
+            cv2.namedWindow("camera", cv2.WINDOW_NORMAL)
+            cv2.setWindowProperty("camera", cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)
+            cv2.imshow('camera', img)
             #wait for 100 miliseconds
             if cv2.waitKey(100) & 0xFF == ord('q'):
                 break

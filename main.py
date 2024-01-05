@@ -10,7 +10,7 @@ import threading
 ctk.set_appearance_mode("dark")
 ctk.set_default_color_theme("blue")
 
-with open('/home/srec/Desktop/FaceRPI/threshold.txt', 'r') as f:
+with open('/home/srec/Desktop/FaceRPI/mb_device2/configs/threshold.txt', 'r') as f:
     thresh = float(f.read())
 
 def start_testing():
@@ -22,7 +22,7 @@ if __name__ == '__main__':
     root.attributes('-fullscreen', True)
     root.title('Visgenix')
 
-    img = Image.open("/home/srec/Desktop/FaceRPI/Visgenix Logo-01.png")
+    img = Image.open("/home/srec/Desktop/FaceRPI/mb_device2/data/Visgenix Logo-01.png")
     img = img.resize((105, 110))
     bg = ImageTk.PhotoImage(img)
 

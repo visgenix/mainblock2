@@ -191,9 +191,9 @@ class WebcamVideoStream:
 
 
 def Train_Recognize(thresh):
-    repo_path = '/home/srec/Desktop/FaceRPI/mainblock2'
+    repo_path = '/home/srec/Desktop/FaceRPI/mb_device2'
     check_and_pull_repo(repo_path)
-    repo_path = '/home/srec/Desktop/FaceRPI/model'
+    repo_path = '/home/srec/Desktop/FaceRPI/model_assets'
     check_and_pull_repo(repo_path)
     #training()
     # process one frame in every 60 frames for speed
@@ -211,7 +211,7 @@ def Train_Recognize(thresh):
         #img=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
         process_this_frame = process_this_frame + 1
         if process_this_frame % 60 == 0:
-            predictions1 = predict(img, model_path="/home/srec/Desktop/FaceRPI/model/trained_knn_model.clf", distance_threshold=thresh)
+            predictions1 = predict(img, model_path="/home/srec/Desktop/FaceRPI/model_assets/trained_knn_model.clf", distance_threshold=thresh)
         frame = show_prediction_labels_on_image(frame, predictions1)
         #cv2.resize(frame,(480,320))
         cv2.namedWindow("camera",cv2.WINDOW_NORMAL)

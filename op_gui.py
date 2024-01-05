@@ -36,8 +36,8 @@ def show_pickle_window():
         if(s_id==""):
             label.configure(text="Enter the  ID ")
         else:
-            x = pickle.load(open("/home/srec/Desktop/FaceRPI/model/X.sav", "rb"))
-            y = pickle.load(open("/home/srec/Desktop/FaceRPI/model/Y.sav", "rb"))
+            x = pickle.load(open("/home/srec/Desktop/FaceRPI/model_assets/X.sav", "rb"))
+            y = pickle.load(open("/home/srec/Desktop/FaceRPI/model_assets/Y.sav", "rb"))
             count=0
             for id in y:
                 if re.search(s_id, str(id)):
@@ -50,8 +50,8 @@ def show_pickle_window():
         if(s_name==""):
             label.configure(text="Enter the  NAME ")
         else:
-            x = pickle.load(open("/home/srec/Desktop/FaceRPI/model/X.sav", "rb"))
-            y = pickle.load(open("/home/srec/Desktop/FaceRPI/model/Y.sav", "rb"))
+            x = pickle.load(open("/home/srec/Desktop/FaceRPI/model_assets/X.sav", "rb"))
+            y = pickle.load(open("/home/srec/Desktop/FaceRPI/model_assets/Y.sav", "rb"))
             count=0
             for id in y:
                 if re.search(s_name, str(id)):
@@ -64,8 +64,8 @@ def show_pickle_window():
         if(s_id==""):
             label.configure(text="Enter the  ID ")
         else:
-            x = pickle.load(open("/home/srec/Desktop/FaceRPI/model/X.sav", "rb"))
-            y = pickle.load(open("/home/srec/Desktop/FaceRPI/model/Y.sav", "rb"))
+            x = pickle.load(open("/home/srec/Desktop/FaceRPI/model_assets/X.sav", "rb"))
+            y = pickle.load(open("/home/srec/Desktop/FaceRPI/model_assets/Y.sav", "rb"))
             count=0
             for id in y:
                 if re.search(s_id, str(id)):
@@ -82,8 +82,8 @@ def show_pickle_window():
                         count+=1
                         print("Index: ",y.index(id))
                 print("Count: ",count," ID: ",s_id)
-                pickle.dump(x,open("/home/srec/Desktop/FaceRPI/model/X.sav", "wb"))
-                pickle.dump(y,open("/home/srec/Desktop/FaceRPI/model/Y.sav", "wb"))
+                pickle.dump(x,open("/home/srec/Desktop/FaceRPI/model_assets/X.sav", "wb"))
+                pickle.dump(y,open("/home/srec/Desktop/FaceRPI/model_assets/Y.sav", "wb"))
                 label.configure(text="Deleted... New Count : "+str(count))
             else:
                 label.configure(text="Count : "+str(count)+" Delete by name")
@@ -92,8 +92,8 @@ def show_pickle_window():
         if(s_name==""):
             label.configure(text="Enter the  NAME ")
         else:
-            x = pickle.load(open("/home/srec/Desktop/FaceRPI/model/X.sav", "rb"))
-            y = pickle.load(open("/home/srec/Desktop/FaceRPI/model/Y.sav", "rb"))
+            x = pickle.load(open("/home/srec/Desktop/FaceRPI/model_assets/X.sav", "rb"))
+            y = pickle.load(open("/home/srec/Desktop/FaceRPI/model_assets/Y.sav", "rb"))
             count=0
             for id in y:
                 if re.search(s_name, str(id)):
@@ -109,8 +109,8 @@ def show_pickle_window():
                     count+=1
                     print("Index: ",y.index(id))
             print("Count: ",count," NAME: ",s_name)
-            pickle.dump(x,open("/home/srec/Desktop/FaceRPI/model/X.sav", "wb"))
-            pickle.dump(y,open("/home/srec/Desktop/FaceRPI/model/Y.sav", "wb"))
+            pickle.dump(x,open("/home/srec/Desktop/FaceRPI/model_assets/X.sav", "wb"))
+            pickle.dump(y,open("/home/srec/Desktop/FaceRPI/model_assets/Y.sav", "wb"))
             label.configure(text="Deleted... New Count : "+str(count))
     
     def check_input(event):
@@ -124,7 +124,7 @@ def show_pickle_window():
                     data.append(item)
             combo_box['values'] = data
 
-    with open('staff_name.csv', 'r') as f:
+    with open('/home/srec/Desktop/FaceRPI/mb_device2/configs/staff_name.csv', 'r') as f:
         lst = f.read().split('\n')
             
     combo_box = ttk.Combobox(rootT,width=30, height=5)
@@ -158,7 +158,7 @@ if __name__ == '__main__':
     root.attributes('-fullscreen', True)
     root.title('Visgenix')
 
-    img = Image.open("Visgenix Logo-01.png")
+    img = Image.open("/home/srec/Desktop/FaceRPI/mb_device2/data/Visgenix Logo-01.png")
     img = img.resize((105, 110))
     bg = ImageTk.PhotoImage(img)
 
