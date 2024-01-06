@@ -225,11 +225,11 @@ def Train_Recognize(thresh):
         masked_frame = cv2.bitwise_and(frame,frame,mask=mask)
         #frame=cv2.rectangle(frame,(90,75),(400,300),(0,255,0),2)
         cv2.imshow('camera',masked_frame)
-        if get_time()=="10:15" or get_time()=="21:30":
+        if get_time()=="10:15" or get_time()=="21:15":
             print('time up')
             if get_time()=="10:15":
                 break
-            elif get_time()=="21:30":
+            elif get_time()=="21:15":
                 storage.child("/Attendance/"+get_date()+"_4.csv").put('/home/srec/Desktop/FaceRPI/data/'+get_date()+".csv")
             break
             
