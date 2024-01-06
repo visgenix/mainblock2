@@ -240,4 +240,4 @@ def Train_Recognize(thresh):
 
 
 Train_Recognize(0.037)
-os.system("sudo shutdown")
+#os.system("sudo shutdown")
